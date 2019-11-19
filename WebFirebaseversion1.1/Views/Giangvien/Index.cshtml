@@ -1,0 +1,104 @@
+﻿@model IEnumerable<WebMVCFirebaseOffical.Models.GiangvienModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-footer">
+        <h4>Dách sách các giảng viên đăng ký trong hệ thống </h4>
+        <div class="ml-auto text-lg-right">
+            <button type="button" class="btn btn-success">@Html.ActionLink("Thêm Mới", "Create",null, new { style = "color:White" })</button>
+            
+
+        </div>
+    </div>
+    <div class="card-body">
+        
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_MA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_HOTEN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_GIOITINH)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_NGAYSINH)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_NOISINH)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_SDT)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_EMAIL)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_CMNN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GV_HOCVI)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_MA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_HOTEN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_GIOITINH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_NGAYSINH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_NOISINH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_SDT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_EMAIL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_CMNN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GV_HOCVI)
+                        </td>
+
+                        <td>
+                            <button class="btn btn-orange" type="button">  @Html.ActionLink("Sửa", "Edit", new { id = item.GV_MA.ToString().Trim()}, new { style = "color:White" }) </button>
+                            <button class="btn btn-info" type="button">  @Html.ActionLink("Chi tiết", "Details", new { id = item.GV_MA.ToString().Trim(), GV_HOTEN = item.GV_HOTEN, GV_ID = item.GV_MA }, new { style = "color:White" }) </button>
+                            <button class="btn btn-secondary" type="button">  @Html.ActionLink("Xóa", "Delete", new { id = item.GV_MA.ToString().Trim() }, new { style = "color:White" }) </button>
+                        
+
+                        </td>
+                    </tr>
+                }
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+ 

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebFirebaseversion1._1.Models.LopDemo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LO_MA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LO_TEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LO_SOLUONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LO_THOIGIAN)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LO_MA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LO_TEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LO_SOLUONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LO_THOIGIAN)
+        </td> 
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Detail", new {  id=item.LO_MA  }) |
+            @Html.ActionLink("Create", "CreateSV", new { id = item.LO_MA } )
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

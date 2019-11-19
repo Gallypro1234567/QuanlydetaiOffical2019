@@ -1,0 +1,142 @@
+﻿@model WebFirebaseversion1._1.Models.ViewModelsGV_DT
+
+ 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            @foreach (var item in Model.sinhvienModels)
+            {
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_ID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_HOTEN)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_GIOITINH)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_NGAYSINH)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_NOISINH)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_SDT)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_EMAIL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_CMNN)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(modelItem => item.SV_THOIGIANDAOTAO)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            @foreach (var sv in Model.sinhvienModels)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_ID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_HOTEN)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_GIOITINH)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_NGAYSINH)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_NOISINH)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_SDT)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_EMAIL)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_CMNN)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => sv.SV_THOIGIANDAOTAO)
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-orange" type="button">  @Html.ActionLink("Thay đổi thông tin", "Edit", new { id = item.SV_ID }, new { style = "color:White" }) </button>
+                                         
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-footer">
+                <div class="col-12 d-flex no-block align-content-items-center">
+                    <h4 class="page-title">Thông tin sinh viên </h4>
+                    <div class="ml-auto text-lg-right">
+                        <button type="button" class="btn btn-success">@Html.ActionLink("Đăng ký đề tài", "DetailsDM",  null, new { style = "color:black" })</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã danh mục
+                                </th>
+                                <th>
+                                    Tên danh mục
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+
+                        @foreach (var item in Model.danhmucDetaiModels)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DM_MA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DM_TEN)
+                                </td>
+                                <td>
+
+
+                                    <button class="btn btn-info" type="button">  @Html.ActionLink("Thông tin chi tiết", null, null, new { style = "color:White" }) </button>
+
+
+
+                                </td>
+                            </tr>
+                        }
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

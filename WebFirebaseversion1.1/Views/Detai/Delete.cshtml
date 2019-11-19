@@ -1,0 +1,96 @@
+﻿@model WebMVCFirebaseOffical.Models.DetaiModels
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <div class="card-body">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_MA):</label>
+                            <label class="col-sm-3 text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_MA)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_TEN):</label>
+                            <label class="col-sm-10 text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_TEN)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_TUKHOA):</label>
+                            <label class="col-sm- text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_TUKHOA)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NGUOITAO):</label>
+                            <label class="col-sm-10 text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_NGUOITAO)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NGAYSUA):</label>
+                            <label class="col-sm-10 text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_NGAYSUA)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NGUOISUA):</label>
+                            <label class="col-sm-10 text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_NGUOISUA)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_PHAMVI):</label>
+                            <label class="col-sm-10 text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_PHAMVI)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_TRANGTHAI):</label>
+                            <label class="col-sm-10 text-left control-label col-form-label">
+                                @Html.DisplayFor(model => model.DT_TRANGTHAI)
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-1 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NOIDUNG):</label>
+                            <label class="col-sm-10 text-left control-label col-form-label">
+                                @Html.Raw(Model.DT_NOIDUNG)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-1 text-right control-label col-form-label"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="btn btn-success"> Xóa</button>
+
+                                    <button type="button" class="btn btn-danger">  @Html.ActionLink("Trở về", "Index", null, new { style = "Color:White" })</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

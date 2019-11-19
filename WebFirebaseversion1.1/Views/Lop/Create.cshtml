@@ -1,0 +1,73 @@
+﻿@model WebMVCFirebaseOffical.Models.LopModels
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ SS
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Thêm thông tin lSSớp</h4>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Mã Lớp:</label>
+
+                            <div class="col-md-9">
+                                @Html.TextBoxFor(model => model.LO_MA, new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Tên lớp</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.LO_TEN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LO_TEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Thời gian đào tạo</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.LO_THOIGIAN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LO_TEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Số lượng sinh viên</label>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.LO_SOLUONG, new { htmlAttributes = new { @class = "form-control " } })
+                                @Html.ValidationMessageFor(model => model.LO_SOLUONG, "", new { @class = "text-danger" })
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-2 text-right control-label col-form-label"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="btn btn-success"> Tạo mới</button>
+
+                                    <button type="submit" class="btn btn-danger">  @Html.ActionLink("Trở về", "Index", null, new { style = "Color:White" })</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,119 @@
+﻿@model WebMVCFirebaseOffical.Models.LopModels
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Thay đổi thông tin lớp</h4>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.LO_MA)</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.LO_MA, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LO_MA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.LO_TEN)</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.LO_TEN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LO_TEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.LO_SOLUONG)</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.LO_SOLUONG, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LO_SOLUONG, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.LO_THOIGIAN)</label>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.LO_THOIGIAN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LO_THOIGIAN, "", new { @class = "text-danger" })
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <div class="col-12 d-flex no-block align-content-items-center"> 
+                                <div class="ml-auto text-lg-right">
+                                    <input type="submit" value="Lưu Thay đổi" class="btn btn-default">
+                                    <button type="button" class="btn btn-secondary"> 
+                                        @Html.ActionLink("Back to List", "Index", null, new { style = "color:white" }) 
+                                    </button> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+        /*colorpicker*/
+        $('.demo').each(function() {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

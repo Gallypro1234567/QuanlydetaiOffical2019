@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebMVCFirebaseOffical.Models.DanhmucDetaiModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-footer">
+        <h4>Đăng ký đề tài đồ án </h4>
+        <div class="ml-auto text-lg-right">
+            <div class="ml-auto text-lg-right">
+
+                <button type="button" class="btn btn-success">@Html.ActionLink("Trở về trang cá nhân", "Index", null, new { style = "color:black" })</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DM_MA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DM_TEN)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DM_MA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DM_TEN)
+                        </td>
+                        <td>
+                            <button class="btn btn-info" type="button">  @Html.ActionLink("Danh sách đề tài", "Details_LOAD_DETAI", new { id = item.DM_MA }, new { style = "color:White" }) </button>
+
+
+                        </td>
+                    </tr>
+                }
+
+
+            </table>
+        </div>
+    </div>
+</div>

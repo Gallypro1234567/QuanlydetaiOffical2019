@@ -1,0 +1,130 @@
+﻿@model WebFirebaseversion1._1.Models.ViewModels
+ 
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @foreach (var item in Model.Lop)
+    {
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Mã Lớp:</label>
+                        <label class="col-sm-8 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => item.LO_MA)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Tên Lớp:</label>
+                        <label class="col-sm-8 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => item.LO_TEN)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Số lượng sinh viên:</label>
+                        <label class="col-sm-8 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => item.LO_SOLUONG)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-2 text-right control-label col-form-label"> Thời gian đào tạo:</label>
+                        <label class="col-sm-8 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => item.LO_THOIGIAN)
+                        </label>
+                    </div>
+                    
+                    <div class="border-top">
+                        <div class="card-body">
+                            <div class="form-group row"> 
+                                <label for="fname" class="col-sm-1 text-right control-label col-form-label"></label>
+                                <div class="col-md-9">
+                                    @foreach (var delete in Model.Lop)
+                                    {
+                                        <button type="button" class="btn btn-success">  @Html.ActionLink("Edit", "Edit", new { id = delete.LO_MA }, new { style = "Color:White" })</button>
+
+                                        <button type="button" class="btn btn-danger">  @Html.ActionLink("Trở về", "Index", null, new { style = "Color:White" })</button>
+                                    }
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="col-md-12">
+        <div class="card">
+           
+            <div class="card-footer">
+                <h4 class="page-title">Thông tin danh sách sinh viên trong Lớp</h4>
+                <div class="ml-auto text-lg-right">
+                    @foreach (var itemm in Model.Lop)
+                    {
+                        <button type="button" class="btn btn-success">@Html.ActionLink("Thêm Mới", "CreateSV", new { id = itemm.LO_MA }, new { style = "color:White" })</button>
+                    }
+
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            HOTEN
+                        </th>
+                        <th>
+                            EMAIL
+                        </th>
+                        <th>
+                            SDT
+                        </th>
+
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model.Sinhvien)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LO_SV_ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LO_SV_HOTEN)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LO_SV_SDT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LO_SV_EMAIL)
+                            </td>
+                            <td>
+
+                                @foreach (var delete in Model.Lop)
+                                {
+                                    <button type="button" class="btn btn-success"> @Html.ActionLink("Edit", "EditSV", new { id = delete.LO_MA, SV_ID = item.LO_SV_ID }, new { style = "color:White" })</button>
+                                    <button type="button" class="btn btn-secondary"> @Html.ActionLink("Details", "Details", "sinhvien", new { id = item.LO_SV_ID }, new { style = "color:White" })</button>
+                                    <button type="button" class="btn btn-info"> @Html.ActionLink("Delete", "DeleteSV", new { id = delete.LO_MA, SV_ID = item.LO_SV_ID }, new { style = "color:White" })</button>
+                                }
+
+
+
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+              
+            </div>
+        </div>
+    </div>
+
+</div>

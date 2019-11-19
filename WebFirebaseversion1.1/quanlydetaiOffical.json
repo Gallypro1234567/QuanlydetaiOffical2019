@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "quanlydetaioffical2019",
+  "private_key_id": "b5eb012967d845d7eca9d5f640cf6d005dc63ecb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEQrkeQpWVkPcg\nuMgjEwS1kbiqPTfvVCt6fea456KTe88AMKcfbUVdwyh7TUH0+Q0ipd/AgiY1a59t\nNyWbh6s2/kSPITeAGxt6c6iyQxSpwuspoWyHl7lqMIj7N/Z6AVJwUcwLP+9LDcJb\nMxlbY9UtI8alHJckzvJBxaOa/ruaaH4EiBgBVudmCZZgYR7WjPpS444DCwQwv8u3\nnSbrsnqJuSPVHd+4tOArwo7Jd+jiNsyvsJgvidHHI30iCQHfgmK8E7ThObmlEwIs\n/vvC6T1HcnS3oIHfK8pWzPnH0Dis0Ujbje69R598/E8HbY7lT6AF5N8IgY4kZrjE\nPKmX4ymtAgMBAAECggEAAktCzkdTIMaOsrMv/+dlwTjGvH2O+J7r4RFnDgO8N5oK\nuzoIIn5SAWIID2g6hUXfLz0TYiahhDNjiGmwTCZYHfQT8llXBIoQISHr5dcSDUmX\nU+sasXRDME2zbYVnWlJVd7VZDXZG0mX0omvfdE7tnXx77VZNdr37uYhAVaptvKhc\nXWO4zIJ70iHUlug46OgaeOTpaCResxh/tKPBYVxDv4fv5c8AJXxYH+dytd2fIh8k\nERvLW55B2aKPq8AFy3qqHLYCXMckRDBpcoe3XIp3i2ZjL4EgH82eoR0nh4NJpD9N\nou1p0AgTPTddJ5f8EOfFfUZn1DvA9/qF3DvRorqpwQKBgQD004eEBH13R7c77xZn\nVFNPiGiW1DqABFz18r9F3a4VI2vt/U/57NhxIoM5qNOAtI4VEGF0GT6aQ2eRauxs\nubvChncj2+IcsAxqEJ202JwjWypeE8iJR13ol2Z8rn7hBm8M40FNb03MrPLVlXv1\nwt/4H3lyGedy+v6oELcBNHBtQQKBgQDNN8S9wi24W6HmfdTMk0rfQCLONTX/ELPZ\nnMIY7/v8iCHdD5VSqe85FVQIX0HUfuyr6p91033GHtQcxkfRSsq57ZcCXUeYIXqI\nFsrmMTdljOlFKBkdLtU/TufgApbBlhUcrHx4H+d7goQ9dm1mX8lphUw+9kw/Bzqd\nA1pBrGplbQKBgQCUsR/96yg0WIcNzICj0xAiHqu+5zh8Zan76imHCkLfLbswOIfp\nN5Kg66AdVc7WvVIJswAtHePqlwOAyxq6UfeaBka3raTfXYC8rkjJ/ECgLI9HweYq\nkgCT8dfZ47TFgD3T6vXPTMlIhMWbOIWn1mpmbN86kEcEizI86qHrBmk9wQKBgBQs\nCTDF54yZpT5s3AAH8nIjcchnPpmF4MfhOssMu+5Ey19ZasonXhZ0XEA+bNAgcc8s\nTuRcF57j5OG3M9QE0AyaqB9ZX/I6SDscUnFyIQngYgWkPWO6+McyUGSanIsG36hj\n5BBCwpRHbgxEmdhYTgoLSkVeHHyNj1tjuvl9oy+5AoGAEkMFAnRLgdUr/7lgZfxm\ndOYdXTEEnH3mbjfHeqFRF2Mp888aDyhW46OuBwfAOwJj7W0FJbacum+kUFQ9XwH6\nTI3b0F57JnS34GXEFPdryRSLlPUMjkU4lAZG6otGl5cPIk2xgEM9avfmir/wvkFO\n5oX+ZwFvS7FKWz81F7LA9cA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "quanlydetai2019@quanlydetaioffical2019.iam.gserviceaccount.com",
+  "client_id": "110461696151106894837",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/quanlydetai2019%40quanlydetaioffical2019.iam.gserviceaccount.com"
+}

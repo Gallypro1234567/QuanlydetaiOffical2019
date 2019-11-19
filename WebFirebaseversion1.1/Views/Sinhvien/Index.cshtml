@@ -1,0 +1,95 @@
+﻿@model IEnumerable<WebMVCFirebaseOffical.Models.SinhvienModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-footer">
+        <div class="col-12 d-flex no-block align-content-items-center">
+            <h4 class="page-title">Thông tin sinh viên </h4>
+            <div class="ml-auto text-lg-right">
+                <button type="button" class="btn btn-success">@Html.ActionLink("Thêm Mới", "Create", null, new { style = "color:black" })</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_ID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_HOTEN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_GIOITINH)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_NGAYSINH)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_NOISINH)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_SDT)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_EMAIL)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_CMNN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SV_THOIGIANDAOTAO)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_HOTEN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_GIOITINH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_NGAYSINH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_NOISINH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_SDT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_EMAIL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_CMNN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SV_THOIGIANDAOTAO)
+                        </td>
+                        <td>
+                            <button class="btn btn-orange" type="button">  @Html.ActionLink("Sửa", "Edit", new { id = item.SV_ID }, new { style = "color:White" }) </button>
+                            <button class="btn btn-orange" type="button">  @Html.ActionLink("Sửa", "Details", new { id = item.SV_ID }, new { style = "color:White" }) </button>
+                            <button class="btn btn-secondary" type="button">  @Html.ActionLink("Chi tiết", "Delete", new { id = item.SV_ID }, new { style = "color:White" }) </button>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+

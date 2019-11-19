@@ -1,0 +1,118 @@
+﻿@model WebMVCFirebaseOffical.Models.DetaiModels
+
+@{
+    ViewBag.Title = "EditDT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Thêm thông tin đề tài</h4>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_MA)</label>
+
+                            <div class="col-md-9">
+                                @Html.TextBoxFor(model => model.DT_MA, new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_TEN)</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_TEN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DT_TEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_TUKHOA)</label>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_TUKHOA, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DT_TUKHOA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NGAYTAO)</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_NGAYTAO, new { htmlAttributes = new { @class = "form-control mydatepicker" } })
+                                @Html.ValidationMessageFor(model => model.DT_NGAYTAO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NGUOITAO)</label>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_NGUOITAO, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DT_NGUOITAO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NGAYSUA)</label>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_NGAYSUA, new { htmlAttributes = new { @class = "form-control mydatepicker" } })
+                                @Html.ValidationMessageFor(model => model.DT_NGAYSUA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_NGUOISUA)</label>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_NGUOISUA, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DT_NGUOISUA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_PHAMVI)</label>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_PHAMVI, new { htmlAttributes = new { @class = "form-control " } })
+                                @Html.ValidationMessageFor(model => model.DT_PHAMVI, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label"> @Html.LabelFor(model => model.DT_TRANGTHAI)</label>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DT_TRANGTHAI, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DT_TRANGTHAI, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-2 text-right control-label col-form-label">@Html.LabelFor(model => model.DT_NOIDUNG)</label>
+                            <div class="col-md-9">
+                                @Html.TextAreaFor(model => model.DT_NOIDUNG, new { @id = "Description", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.DT_NOIDUNG, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-top">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-2 text-right control-label col-form-label"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="btn btn-success"> Lưu thay đổi</button>
+
+                                    <button type="submit" class="btn btn-danger">  @Html.ActionLink("Trở về", "Index", null, new { style = "Color:White" })</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

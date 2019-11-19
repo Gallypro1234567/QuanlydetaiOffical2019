@@ -1,0 +1,173 @@
+﻿@model WebFirebaseversion1._1.Models.ViewModelsGV_DT
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            @foreach (var item in Model.giangvienModels)
+            {
+                <div class="card-body">
+                    <h4 class="card-title">Thông tin chi tiết của giảng viên</h4>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+              
+                    <div class="row">
+                        <div class="col-md-3  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Mã cán bộ:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_MA)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Giới tính:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_GIOITINH)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Nơi sinh:</label>
+                                <label class="col-md-5  control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_NOISINH)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Họ và tên:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_HOTEN)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Ngày sinh:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_NGAYSINH)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Số điện thoại:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_SDT)
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-6 text-right control-label col-form-label"> Chứng minh nhân dân:</label>
+                                <label class="col-md-3 text-lg-center control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_CMNN)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Địa chỉ Email:</label>
+                                <label class="col-sm-6 text-md-center control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_EMAIL)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label">  Học vị:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.GV_HOCVI)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                           
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-9 text-right control-label col-form-label"></label>
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-success">  @Html.ActionLink("Thay đổi", "Edit", new { id = item.GV_MA},new { style = "Color:White" })</button>
+
+                                    <button type="button" class="btn btn-danger">  @Html.ActionLink("Trở về", "Index", null, new { style = "Color:White" })</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+  
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-12 d-flex no-block align-content-items-center">
+                    @foreach (var gvten in Model.giangvienModels)
+                    {
+                    <h4 class="page-title">Thông tin đề tài của giảng viên @Html.DisplayFor(modelItem => gvten.GV_HOTEN)</h4>
+                    }  
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã danh mục
+                                </th>
+                                <th>
+                                    Tên danh mục
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+
+                        @foreach (var item in Model.danhmucDetaiModels)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DM_MA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DM_TEN)
+                                </td>
+                                <td>
+                                    @foreach (var gv in Model.giangvienModels)
+                                    {
+                                        
+                                        <button class="btn btn-info" type="button">  @Html.ActionLink("Thông tin chi tiết", "DetailsDM", new { DM_ID = item.DM_MA, GV_ID = gv.GV_MA, GV_HOTEN = gv.GV_HOTEN }, new { style = "color:White" }) </button>
+                                       
+
+                                    }
+                                </td>
+                            </tr>
+                        }
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 

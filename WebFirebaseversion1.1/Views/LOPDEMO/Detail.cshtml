@@ -1,0 +1,116 @@
+﻿@model WebFirebaseversion1._1.Models.ViewModels
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div class="row">
+    <div class="col-12">
+        <div class="col-12">
+            <div class="card">
+                <h4 class="card-footer">Thông tin lớp</h4>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                TENLOP
+                            </th>
+                            <th>
+                                SOLUONG
+                            </th>
+                            <th>
+                                THOIGIAN
+                            </th>
+
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model.Lop)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_MA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_TEN)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_SOLUONG)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_THOIGIAN)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new {  id=item.LO_MA }) |
+
+                                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <h4 class="card-footer">Thông tin sinh viên trong lớp</h4>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                HOTEN
+                            </th>
+                            <th>
+                                SDT
+                            </th>
+                            <th>
+                                EMAIL
+                            </th>
+
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model.Sinhvien)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_SV_ID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_SV_HOTEN)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_SV_SDT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LO_SV_EMAIL)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+
+                                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+ 
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

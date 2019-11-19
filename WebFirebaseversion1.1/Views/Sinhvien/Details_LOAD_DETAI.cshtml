@@ -1,0 +1,97 @@
+﻿@model WebFirebaseversion1._1.Models.ViewModelsDetai
+
+@{
+    ViewBag.Title = "Details_LOAD_DETAI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @foreach (var item in Model.danhmucDetaiModels)
+    {
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-footer">
+                    <h4>Thông tin danh sách đề tài @Html.DisplayFor(modelItem => item.DM_TEN) </h4>
+                    <div class="ml-auto text-lg-right">
+                        <div class="ml-auto text-lg-right">
+                            <button type="button" class="btn btn-danger">  @Html.ActionLink("Trở về danh mục đề tài", "DetailsDM",new { }, new { style = "Color:White" })</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Mã Danh mục:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.DM_MA)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3  pr-md-1">
+                            <div class="form-group">
+                                <label for="fname" class="col-md-4 text-right control-label col-form-label"> Tên danh mục:</label>
+                                <label class="col-sm-5 text-left control-label col-form-label">
+                                    @Html.DisplayFor(modelItem => item.DM_TEN)
+                                   
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+<div class="row">
+    @foreach (var itemmm in Model.danhMuc_Detais)
+    {
+        <div class="col-md-3">
+            <div class="card" SS>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Mã đề tài:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_MA)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Tên đề tài:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_TEN)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Người tạo:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_NGUOITAO)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Trạng thái:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_TRANGTHAI)
+                        </label>
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-4 text-right control-label col-form-label"></label>
+                                <div class="col-md-5">
+                                    @foreach (var delete in Model.danhmucDetaiModels)
+                                    {
+                                        <button type="button" class="btn btn-success"> @Html.ActionLink("Đăng Ký đề tài", null, null, new { style = "color:White" })</button>
+                                         
+                                    }
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

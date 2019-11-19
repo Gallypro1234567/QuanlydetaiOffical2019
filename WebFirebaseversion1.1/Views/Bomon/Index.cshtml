@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebMVCFirebaseOffical.Models.BomonModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-footer">
+        <div class="col-12 d-flex no-block align-content-items-center">
+            <h4 class="page-title">Thông tin các lớp </h4>
+            <div class="ml-auto text-lg-right">
+                <button type="button" class="btn btn-success">@Html.ActionLink("Thêm Mới", "Create", null, new { style = "color:black" })</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body"> 
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BM_MA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BM_TEN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BM_CANBO_PHUTRACH)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BM_MA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BM_TEN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BM_CANBO_PHUTRACH)
+                        </td>
+                        <td>
+                            <button class="btn btn-orange" type="button">  @Html.ActionLink("Sửa", "Edit", new { id = item.BM_MA }, new { style = "color:White" }) </button>
+                            <button class="btn btn-info" type="button">  @Html.ActionLink("Chi tiết", "Details", new { id = item.BM_MA }, new { style = "color:White" }) </button>
+                            <button class="btn btn-secondary" type="button">  @Html.ActionLink("Xóa", "Delete", new { id = item.BM_MA }, new { style = "color:White" }) </button>
+
+
+                        </td>
+                    </tr>
+                }
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+ 

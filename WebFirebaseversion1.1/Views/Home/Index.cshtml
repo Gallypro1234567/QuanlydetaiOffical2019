@@ -1,0 +1,129 @@
+﻿@model WebFirebaseversion1._1.Models.ViewModelsGV_DT
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-sm-8">
+        <div class="center-block">
+            <img src="~/assets/banner.jpg" />
+        </div>
+    </div>
+</div>
+<div class="row"> 
+    <div class="col-12">
+        <div class="card">
+            <div class="card-footer">
+                <div class="col-12 d-flex no-block align-content-items-center">
+                    <h4 class="page-title">Thông tin Danh sách giảng viên ra đề tài </h4>
+
+                </div>
+            </div>
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    Giảng Viên
+                                </th>
+                                <th>
+                                    Giới tính
+                                </th>
+
+                                <th>
+                                    Số điện thoại
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+
+                        @foreach (var item in Model.giangvienModels)
+                        {
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GV_HOTEN)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GV_GIOITINH)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GV_SDT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GV_EMAIL)
+                                </td>
+                                <td>
+                                    <button class="btn btn-orange" type="button"> Liên Hệ </button>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    @foreach (var itemmm in Model.danhMuc_Detais)
+    {
+        <div class="col-md-3">
+            <div class="card" SS>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Mã đề tài:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_MA)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Tên đề tài:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_TEN)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Người tạo:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_NGUOITAO)
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Trạng thái:</label>
+                        <label class="col-sm-9 text-left control-label col-form-label">
+                            @Html.DisplayFor(modelItem => itemmm.DT_TRANGTHAI)
+                        </label>
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-1 text-right control-label col-form-label"></label>
+                                <div class="col-md-9">
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

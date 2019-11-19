@@ -1,0 +1,90 @@
+﻿@model WebMVCFirebaseOffical.Models.GiangvienModels
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        <div class="card-body">
+                            <h4 class="card-title">Xóa thông tin giảng viên</h4>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_MA):</label>
+                                <label class="col-sm-3 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_MA)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_HOTEN):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_HOTEN)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_GIOITINH):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_GIOITINH)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_NGAYSINH):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_NGAYSINH)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_NOISINH):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_NGAYSINH)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_CMNN):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_CMNN)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_SDT):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_SDT)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_EMAIL):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_EMAIL)
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.GV_HOCVI):</label>
+                                <label class="col-sm-9 text-left control-label col-form-label">
+                                    @Html.DisplayFor(model => model.GV_HOCVI)
+                                </label>
+                            </div> 
+                        </div>
+                        <div class="border-top">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="fname" class="col-sm-2 text-right control-label col-form-label"></label>
+                                    <div class="col-md-9">
+                                        <button type="submit" class="btn btn-success">Xóa</button> 
+                                        <button type="button" class="btn btn-danger">  @Html.ActionLink("Trở về", "Index", null, new { style = "Color:White" })</button>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div> 
+                    </div>
+                }
+            </div> 
+        </div> 
+    </div>
